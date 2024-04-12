@@ -3,7 +3,15 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
 
 # plugins
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions z fzf-zsh-plugin thefuck)
+plugins=(
+    git
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    z 
+    fzf-zsh-plugin 
+    thefuck 
+    you-should-use
+)
 
 source $ZSH/oh-my-zsh.sh
 
