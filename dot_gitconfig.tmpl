@@ -1,7 +1,7 @@
 [user]
-	name = Oscar García
-	email = oscar@oskarizu.net
-	signingkey = 03BADDA8
+	name = {{ .full_name | quote }}
+	email = {{ .email | quote }}
+	signingkey = {{ .gpg_key | quote }}
 
 [gpg]
 	program = /opt/homebrew/bin/gpg
