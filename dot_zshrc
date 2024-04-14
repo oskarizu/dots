@@ -26,6 +26,8 @@ alias zshconfig="vim ~/.zshrc"
 alias c=clear
 alias uz="source ~/.zshrc"
 
+zstyle ':completion:*' menu select
+
 # Starhip theme
 eval "$(starship init zsh)"
 
