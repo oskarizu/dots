@@ -1,0 +1,7 @@
+# Managed by chezmoi. Do not put host-specific or private settings here.
+# Hosts, users, ports and key names live in the untracked ~/.ssh/config.local.
+# Include comes first: ssh uses the first value obtained, so local settings win.
+Include ~/.ssh/config.local
+
+Host github.com
+  AddKeysToAgent yes

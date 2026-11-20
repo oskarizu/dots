@@ -1,0 +1,88 @@
+# Homebrew env (must come first so brew-installed tools are on PATH for plugins)
+[ -x /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME=""
+
+# Editor config
+export EDITOR="code -w"
+
+# Disable auto update
+zstyle ':omz:update' mode disabled
+
+# Lazy-load nvm (big startup win)
+zstyle ':omz:plugins:nvm' lazy yes
+
+# plugins (asdf plugin already adds shims to PATH; syntax-highlighting must be last).
+# fzf-zsh-plugin runs `git clone` of fzf into ~/.fzf on first load if fzf is missing,
+# so it is only loaded when fzf is already installed.
+plugins=(git z)
+if (( $+commands[fzf] )) || [[ -d "$HOME/.fzf" ]]; then
+    plugins+=(fzf-zsh-plugin)
+fi
+plugins+=(thefuck you-should-use asdf nvm zsh-autosuggestions zsh-syntax-highlighting)
+
+export ZSH_CACHE_DIR="$HOME/.cache/oh-my-zsh"
+mkdir -p "$ZSH_CACHE_DIR/completions"
+
+source $ZSH/oh-my-zsh.sh
+
+# aliases
+alias zshconfig="vim ~/.zshrc"
+alias c=clear
+alias uz="exec zsh"
+
+zstyle ':completion:*' menu select
+
+# Starship theme
+command -v starship >/dev/null && eval "$(starship init zsh)"
+
+# GPG tools
+export GPG_TTY=$(tty)
+
+# rbenv
+command -v rbenv >/dev/null && eval "$(rbenv init - zsh)"
+
+# Private env vars (untracked)
+[ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# >>> git-nav shell integration >>>
+gnav() {
+  # Informational flags print to stdout for human consumption; running
+  # them through the capture-and-cd path below would try to `cd` into
+  # the help text. Pass them through directly instead.
+  case "$1" in
+    -h|--help|-V|--version|--config-path|--init)
+      "$HOME/.cargo/bin/git-nav" "$@"
+      return
+      ;;
+  esac
+  local dest
+  dest="$("$HOME/.cargo/bin/git-nav" "$@")" || return
+  [ -n "$dest" ] && cd "$dest"
+}
+# <<< git-nav shell integration <<<
+
+# >>> Android / React Native toolchain >>>
+if [ -d "$HOME/Library/Android/sdk" ]; then
+export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$JAVA_HOME/bin:$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin
+fi
+# <<< Android / React Native toolchain <<<
+
+# Machine-local, untracked config
+[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
+
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!! (JDK re-assert block follows)
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Re-assert JDK 17 for Android/React Native after SDKMAN (SDKMAN init overrides JAVA_HOME)
+if [ -d "/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home" ] && [ -d "$HOME/Library/Android/sdk" ]; then
+  export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"
+  export PATH="$JAVA_HOME/bin:$PATH"
+fi

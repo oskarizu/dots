@@ -3,9 +3,11 @@
 	email = {{ .email | quote }}
 	signingkey = {{ .gpg_key | quote }}
 
+{{ with lookPath "gpg" -}}
 [gpg]
-	program = /opt/homebrew/bin/gpg
+	program = {{ . }}
 
+{{ end -}}
 [commit]
 	gpgsign = true
 
