@@ -1,30 +1,39 @@
+# ohmyzsh/ohmyzsh @ c014070 (2026-11-16)
 [".oh-my-zsh"]
     type = "archive"
-    url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
+    url = "https://github.com/ohmyzsh/ohmyzsh/archive/c0140703a53eb0d22be44f7bac318d0baacc927c.tar.gz"
+    checksum.sha256 = "9b0661db3e7466dd396de2a1591ff9b5981572417649254c9d656ac086b09251"
     exact = true
     stripComponents = 1
-    refreshPeriod = "168h"
+
+# zsh-users/zsh-syntax-highlighting @ e6683f2 (2026-10-09)
 [".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
     type = "archive"
-    url = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz"
+    url = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/e6683f20e5c38d3e5447f45845d04ddda75d0f23.tar.gz"
+    checksum.sha256 = "6e8258a74e6f3cac03e1bb5ee72504bc4d819904e9aa742d62f60833168db265"
     exact = true
     stripComponents = 1
-    refreshPeriod = "168h"
+
+# zsh-users/zsh-autosuggestions @ 85919cd (2025-06-24)
 [".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
     type = "archive"
-    url = "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"
+    url = "https://github.com/zsh-users/zsh-autosuggestions/archive/85919cd1ffa7d2d5412f6d3fe437ebdbeeec4fc5.tar.gz"
+    checksum.sha256 = "20665e469e720e674964a66854d5534b9af78cdfd438512746ecd1ade8e819ce"
     exact = true
     stripComponents = 1
-    refreshPeriod = "168h"
+
+# unixorn/fzf-zsh-plugin @ 824f508 (2026-11-02)
 [".oh-my-zsh/custom/plugins/fzf-zsh-plugin"]
     type = "archive"
-    url = "https://github.com/unixorn/fzf-zsh-plugin/archive/master.tar.gz"
+    url = "https://github.com/unixorn/fzf-zsh-plugin/archive/824f508faa36ca5fdbeefaf471393acb0b2c5415.tar.gz"
+    checksum.sha256 = "12ee1a757f64f75257758da7e08dcaa534030de6a0df564094dfefc4d9443b6b"
     exact = true
     stripComponents = 1
-    refreshPeriod = "168h"
+
+# MichaelAquilina/zsh-you-should-use @ 5f3d129 (2026-05-26)
 [".oh-my-zsh/custom/plugins/you-should-use"]
     type = "archive"
-    url = "https://github.com/MichaelAquilina/zsh-you-should-use/archive/master.tar.gz"
+    url = "https://github.com/MichaelAquilina/zsh-you-should-use/archive/5f3d129864ee4505043d88c3486224f1d75b692e.tar.gz"
+    checksum.sha256 = "273907a3529525834b434071d3d761479ff393b1869fbd41c971cf2cd620b65e"
     exact = true
     stripComponents = 1
-    refreshPeriod = "168h"
