@@ -1,0 +1,31 @@
+# Fonts (DMCA history)
+*.ttf
+*.otf
+*.woff
+*.woff2
+*.ttc
+*.dfont
+
+# Secrets and keys
+*.pem
+id_*
+*.key
+.secrets
+hosts.yml
+
+.DS_Store
+
+# Machine-local overrides and env files
+*.local
+.env
+.env.*
+
+# Key material and exports
+*.asc
+*.gpg
+*.p12
+
+# Archives and editor backups
+*.tar.gz
+*.bak
+*~

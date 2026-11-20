@@ -1,0 +1,13 @@
+# Repo-only files, never applied to $HOME
+README.md
+LICENSE
+docs
+.github
+
+# Never deploy fonts (DMCA history)
+**/*.ttf
+**/*.otf
+**/*.woff
+**/*.woff2
+**/*.ttc
+**/*.dfont
