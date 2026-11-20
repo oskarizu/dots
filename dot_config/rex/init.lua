@@ -1,0 +1,3 @@
+-- Rex configuration, migrated from Ghostty and iTerm2.
+-- Neither source binds any keys, and cmd+k keeps Rex's session picker,
+-- so no bindings are needed: Rex's defaults apply.

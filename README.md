@@ -7,6 +7,7 @@ macOS dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 - zsh: `.zshrc` (template) and `.zshenv`
 - git: `.gitconfig` (template) with delta and commit signing
 - starship, vim, thefuck and git-nav config
+- Rex terminal config: `~/.config/rex/init.lua`
 - gh config (not `hosts.yml`, which holds credentials)
 - `~/.ssh/config`: a minimal template that `Include`s an untracked `~/.ssh/config.local`
 - `~/.Brewfile`: a global Brewfile, plus a `run_onchange_` script that runs
@@ -14,6 +15,24 @@ macOS dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 - oh-my-zsh and 4 third-party plugins, fetched as chezmoi externals
   (`.chezmoiexternal.toml`, pinned to commit SHAs and bumped manually). oh-my-zsh is `exact`, so its
   cache lives in `~/.cache/oh-my-zsh` via `ZSH_CACHE_DIR` in `.zshrc`.
+
+## Apps whose settings live outside this repo
+
+Rex replaces Ghostty as the terminal; its config is tracked here
+(`~/.config/rex/init.lua`).
+
+Raycast: `~/.config/raycast` is deliberately NOT tracked. It only holds
+installed Store extensions (third-party code, about 800 MB, re-downloaded from
+the Store), not configuration.
+
+- On a new Mac, reinstall these extensions from the Raycast Store: Spotify
+  Player, Linear, 1Password, Google Chrome.
+- Raycast's real settings (hotkeys, quicklinks, snippets) live in the app. Back
+  them up with Raycast's built-in "Export Settings & Data" (Settings -> Advanced,
+  or the Export Settings & Data command), which produces a password-protected
+  `.rayconfig` file.
+- Keep that file somewhere private, never in this public repo (`*.rayconfig` is
+  gitignored). Import it on the new Mac via Raycast's "Import Settings & Data".
 
 ## Bootstrap on a new Mac
 
