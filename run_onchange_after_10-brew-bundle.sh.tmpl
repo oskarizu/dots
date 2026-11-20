@@ -1,0 +1,9 @@
+#!/bin/bash
+# Re-runs only when the Brewfile content changes.
+# Brewfile hash: {{ include "dot_Brewfile" | sha256sum }}
+set -euo pipefail
+if ! command -v brew >/dev/null 2>&1; then
+  echo "brew not found; skipping brew bundle" >&2
+  exit 0
+fi
+brew bundle --global --no-upgrade

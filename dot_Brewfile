@@ -1,0 +1,47 @@
+tap "jesseduffield/lazydocker"
+tap "mobile-dev-inc/tap"
+# Extendable version manager with support for Ruby, Node.js, Erlang & more
+brew "asdf"
+# Manage your dotfiles across multiple diverse machines, securely
+brew "chezmoi"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
+# GitHub command-line tool
+brew "gh"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Development kit for the Java programming language
+brew "openjdk@17"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# PDF files password cracker
+brew "pdfcrack"
+# Ruby version manager
+brew "rbenv"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Tool to enforce Swift style and conventions
+brew "swiftlint"
+# Programmatically correct mistyped console commands
+brew "thefuck"
+# Your CLI home video recorder
+brew "vhs"
+# Sends magic packets to wake up network-devices
+brew "wakeonlan"
+# Watch files and take action when they change
+brew "watchman"
+# Little beautifier tool for xcodebuild
+brew "xcbeautify"
+# Generate your Xcode project from a spec file and your folder structure
+brew "xcodegen"
+# The easiest way to automate UI testing for your mobile app
+brew "mobile-dev-inc/tap/maestro", trusted: true
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
+# Quick Look generator for Markdown files
+cask "qlmarkdown"
+cargo "cargo-audit"
+cargo "git-nav"
+npm "corepack"
