@@ -1,5 +1,7 @@
 tap "jesseduffield/lazydocker"
 tap "mobile-dev-inc/tap"
+# Static checker for GitHub Actions workflow files
+brew "actionlint"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Manage your dotfiles across multiple diverse machines, securely
@@ -18,6 +20,8 @@ brew "jq"
 brew "openjdk@17"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
+# Drop-in replacement for Terraform. Infrastructure as Code Tool
+brew "opentofu"
 # PDF files password cracker
 brew "pdfcrack"
 # Ruby version manager
